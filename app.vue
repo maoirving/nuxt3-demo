@@ -1,5 +1,7 @@
+<script lang="ts" setup>
+const title = ref('hello')
+</script>
+
 <template>
-  <div>
-    <NuxtWelcome />
-  </div>
+  <div>{{ title }}</div>
 </template>
