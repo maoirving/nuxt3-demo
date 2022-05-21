@@ -8,6 +8,8 @@
     "preview": "nuxt preview"
   },
   "devDependencies": {
+    "@types/lodash": "^4.14.182",
+    "@types/ramda": "^0.28.13",
     "@typescript-eslint/eslint-plugin": "^5.25.0",
     "@typescript-eslint/parser": "^5.25.0",
     "eslint": "^8.16.0",
@@ -15,8 +17,11 @@
     "eslint-plugin-nuxt": "^3.2.0",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-vue": "^9.0.1",
+    "lodash": "^4.17.21",
     "nuxt": "3.0.0-rc.3",
     "prettier": "^2.6.2",
+    "ramda": "^0.28.0",
+    "sass": "^1.52.1",
     "typescript": "^4.6.4"
   }
 }
