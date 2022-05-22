@@ -1,10 +1,9 @@
 <script lang="ts" setup>
-const title = ref('404 Page')
+const title = ref('PDP')
 </script>
 
 <template>
   <div>
     <h1>{{ title }}</h1>
-    <NuxtLink to="/"> back Home</NuxtLink>
   </div>
 </template>
