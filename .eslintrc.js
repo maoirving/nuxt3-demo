@@ -16,6 +16,7 @@ module.exports = {
   },
   plugins: ['@typescript-eslint'],
   rules: {
+    'vue/script-setup-uses-vars': 'error', // This rule is not needed when using vue-eslint-parser v9.0.0 or later.
     'vue/multi-word-component-names': 0, //关闭vue文件和组件命名校验
     'vue/singleline-html-element-content-newline': 'off',
     'vue/multiline-html-element-content-newline': 'off',
