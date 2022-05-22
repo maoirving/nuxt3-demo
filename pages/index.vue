@@ -21,12 +21,16 @@ const onShowBall = () => {
     <h1>{{ title }}</h1>
     <p>mouse: ({{ x }}, {{ y }})</p>
     <div>
-      <NuxtLink :to="{ name: 'product-lister-slug', params: { slug: 'iPhone' } }">
+      <NuxtLink
+        :to="{ name: 'product-lister-slug', params: { slug: 'iPhone' } }"
+      >
         to PLP
       </NuxtLink>
     </div>
     <div>
-      <NuxtLink :to="{ name: 'product-detail-slug', params: { slug: 'iPhone13' } }">
+      <NuxtLink
+        :to="{ name: 'product-detail-slug', params: { slug: 'iPhone13' } }"
+      >
         to PDP
       </NuxtLink>
     </div>

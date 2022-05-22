@@ -6,7 +6,9 @@ const title = ref('PLP')
   <div>
     <h1>{{ title }}</h1>
     <div>
-      <NuxtLink :to="{ name: 'product-detail-slug', params: { slug: 'iPhone13' } }">
+      <NuxtLink
+        :to="{ name: 'product-detail-slug', params: { slug: 'iPhone13' } }"
+      >
         iPhone 13
       </NuxtLink>
     </div>

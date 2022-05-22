@@ -27,7 +27,7 @@ module.exports = {
     'prettier/prettier': [
       'warn',
       {
-        printWidth: 100, //代码单行长度
+        printWidth: 80, //代码单行长度
         tabWidth: 2, //tab键缩进为2空格
         useTabs: false, //使用空格缩进
         singleQuote: true, //js单引号
