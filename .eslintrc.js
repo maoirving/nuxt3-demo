@@ -25,7 +25,7 @@ module.exports = {
     'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'warn',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'warn',
     'prettier/prettier': [
-      'error',
+      'warn',
       {
         printWidth: 100, //代码单行长度
         tabWidth: 2, //tab键缩进为2空格
