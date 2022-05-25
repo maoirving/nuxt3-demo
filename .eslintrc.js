@@ -35,6 +35,7 @@ module.exports = {
         trailingComma: 'es5', //尾随逗号
         arrowParens: 'avoid', //箭头函数尽可能省略括号
         jsxBracketSameLine: true, //标签换行后>单独一行
+        endOfLine: 'auto',
       },
     ],
   },
