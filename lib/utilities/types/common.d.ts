@@ -14,3 +14,8 @@ export interface ObjectAction {
   value?: string | string[]
   action: Action
 }
+
+export interface KeyVal<T> {
+  key: string
+  val: T
+}
