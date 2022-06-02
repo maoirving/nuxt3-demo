@@ -1,12 +1,12 @@
 import { Dictionary } from './types/common'
 
-export function parseToArray<T>(val: T | T[]) {
+export const parseToArray = <T>(val: T | T[]) => {
   if (!val) return []
 
   return Array.isArray(val) ? val : [val]
 }
 
-export function unique<T>(arr: T[]) {
+export const unique = <T>(arr: T[]) => {
   return Array.from(new Set(arr))
 }
 
