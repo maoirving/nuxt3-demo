@@ -22,6 +22,7 @@ module.exports = {
     'vue/multiline-html-element-content-newline': 'off',
     'vue/max-attributes-per-line': 0,
     '@typescript-eslint/no-explicit-any': 0,
+    '@typescript-eslint/ban-types': 'off',
     'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'warn',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'warn',
     'prettier/prettier': [
