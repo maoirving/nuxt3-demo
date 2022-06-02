@@ -1,6 +1,7 @@
 import { clone } from 'ramda'
 import { parseToArray, unique } from './array'
 import { Action, Dictionary, ObjectAction } from './types/common'
+import { findKey as lo_findKey } from 'lodash'
 
 export const combineObject = (
   currentObj: Dictionary<string | string[]>,
@@ -38,3 +39,5 @@ export const combineObject = (
 
   return newObj
 }
+
+export const findKey = lo_findKey
