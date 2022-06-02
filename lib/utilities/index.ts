@@ -1,5 +1,16 @@
 import { Dictionary, clone } from 'ramda'
 import { Action, ObjectAction } from './types'
+import { isNumber } from './variable-type'
+
+// String
+export const padStart = (
+  val: string | number,
+  length: number,
+  filler = '0'
+) => {
+  const avalibleVal = isNumber(val) ? val.toString() : val
+  return avalibleVal.padStart(length, filler)
+}
 
 // Array
 export function parseToArray<T>(val: T | T[]) {
