@@ -1,4 +1,4 @@
-import { padStart } from './index'
+import { padStart } from './string'
 
 export const parseISO8601Duration = (
   duration: string,

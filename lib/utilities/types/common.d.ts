@@ -1,3 +1,7 @@
+export interface Dictionary<T> {
+  [index: string]: T
+}
+
 export enum Action {
   Add = 0,
   Remove = 1,
