@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { onClickOutside } from '@vueuse/core'
-import { removeBy, removeByIndex, uniqueBy } from '~~/lib/utilities/array'
-import { isFunction, isObject } from '~~/lib/utilities/variable-type'
+import { removeBy } from '~~/lib/utilities/array'
 
 const { x, y } = useMouse()
 
@@ -16,8 +15,6 @@ onClickOutside(targetEl, () => {
 const onShowBall = () => {
   ballVisible.value = true
 }
-// const { data } = useAsyncData('hello', () => $fetch('/api/aspos/common/config'))
-// console.log(data.value)
 const arr = [
   {
     name: 'mao',
@@ -37,8 +34,6 @@ const arr = [
   },
 ]
 removeBy(arr, { key: 'name', val: '33' }, true)
-// uniqueBy(arr, 'age')
-console.log(arr)
 </script>
 
 <template>
@@ -63,7 +58,7 @@ console.log(arr)
       </NuxtLink>
     </div>
     <div>
-      <BaseButton @click="onShowBall"> show ball</BaseButton>
+      <BaseButton varint="primary" @click="onShowBall"> show ball </BaseButton>
     </div>
     <div v-if="ballVisible" ref="targetEl" class="targer">click outside!</div>
   </div>
