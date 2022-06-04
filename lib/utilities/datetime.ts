@@ -28,7 +28,7 @@ export const parseISO8601Duration = (
     : ''
 }
 
-export const getCurrentTime = () => {
+export const getCurrentTimeString = () => {
   const now = new Date()
   const h = now.getHours()
   const m = now.getMinutes()

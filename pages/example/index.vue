@@ -1,14 +1,25 @@
 <script setup lang="ts">
-const title = ref('Example Page')
+import { filterAndMap, getLastInArray } from '~~/examples/array'
+import { numArr } from '~~/examples/array/data'
+import { getCurrentTimeString } from '~~/lib/utilities/datetime'
 
-const numArr = [1, 2, 3, 4, 5]
+const title = ref('Example Page')
 const examples = ref([
   {
     title: '获取数组最后一个元素',
     description: 'Array.prototype.at(-1)',
     code: `[${numArr}].at(-1) = ${numArr.at(-1)}`,
   },
+  {
+    title: '数组filter和map的组合优化',
+    description: 'Array.prototype.reduce()/Array.prototype.flatMap()',
+    code: `see filterAndMap() in '~~/examples/array'`,
+  },
 ])
+getLastInArray()
+filterAndMap()
+console.log(getCurrentTimeString())
+console.log(new Date().toTimeString())
 </script>
 
 <template>
