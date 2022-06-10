@@ -25,12 +25,12 @@ export const uniqueBy = <T>(arr: Dictionary<T>[], propName: string) => {
   return newArr
 }
 
-export const clear = <T>(arr: T[]) => {
+export const empty = <T>(arr: T[]) => {
   arr.length = 0
 }
 
 export const replace = <T>(arr: T[], newArr: T[]) => {
-  clear(arr)
+  empty(arr)
   arr.push(...newArr)
 }
 
