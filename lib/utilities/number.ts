@@ -4,3 +4,7 @@ export const getDecimalLength = (num: number) => {
   if (numArr.length !== 2) return 0
   return numArr[1].length
 }
+
+export const clamp = (min: number, max: number, num: number) => {
+  return Math.min(max, Math.max(min, num))
+}
