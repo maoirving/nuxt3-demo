@@ -8,9 +8,9 @@ export const getLastInArray = () => {
 // when you want to use filter and map at the same time
 export const filterAndMap = () => {
   // Method 1. use Array.reduce()
-  const newArr = objArr.reduce((prev, next) => {
-    if (next.visible) {
-      prev.push(next.name)
+  const newArr = objArr.reduce((prev, current) => {
+    if (current.visible) {
+      prev.push(current.name)
     }
     return prev
   }, [] as string[])
