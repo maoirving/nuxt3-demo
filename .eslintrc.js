@@ -23,6 +23,13 @@ module.exports = {
     'vue/max-attributes-per-line': 0,
     '@typescript-eslint/no-explicit-any': 0,
     '@typescript-eslint/ban-types': 'off',
+    'prefer-const': [
+      'error',
+      {
+        destructuring: 'any',
+        ignoreReadBeforeAssign: false,
+      },
+    ],
     'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'warn',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'warn',
     'prettier/prettier': [
