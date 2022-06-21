@@ -1,3 +1,4 @@
+import { groupBy as lo_groupBy } from 'lodash'
 import { Dictionary, KeyVal } from './types/common'
 
 export const parseToArray = <T>(val: T | T[]) => {
@@ -60,3 +61,5 @@ export const removeBy = <T>(
     }
   }
 }
+
+export const groupBy = lo_groupBy
