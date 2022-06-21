@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { onClickOutside } from '@vueuse/core'
-import { removeBy } from '~~/lib/utilities/array'
 
 const { x, y } = useMouse()
 
@@ -15,31 +14,15 @@ onClickOutside(targetEl, () => {
 const onShowBall = () => {
   ballVisible.value = true
 }
-const arr = [
-  {
-    name: 'mao',
-    age: 44,
-  },
-  {
-    name: 'hello',
-    age: 45,
-  },
-  {
-    name: '33',
-    age: 44,
-  },
-  {
-    name: '33',
-    age: 44,
-  },
-]
-removeBy(arr, { key: 'name', val: '33' }, true)
 </script>
 
 <template>
   <div>
     <h1>{{ title }}</h1>
     <p>mouse: ({{ x }}, {{ y }})</p>
+    <div>
+      <NuxtLink :to="{ name: 'demo' }"> to Demo </NuxtLink>
+    </div>
     <div>
       <NuxtLink :to="{ name: 'example' }"> to Example </NuxtLink>
     </div>
