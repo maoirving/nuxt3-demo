@@ -3,7 +3,7 @@ export const numArr = [1, 2, 3, 4, 5]
 export const objArr = [
   {
     name: 'mao',
-    age: 18,
+    age: 20,
     visible: true,
   },
   {

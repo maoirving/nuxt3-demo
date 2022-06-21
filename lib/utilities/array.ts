@@ -1,5 +1,4 @@
-import { groupBy as lo_groupBy } from 'lodash'
-import { Dictionary, KeyVal } from './types/common'
+import { groupBy as lo_groupBy, remove as lo_remove } from 'lodash'
 
 export const parseToArray = <T>(val: T | T[]) => {
   if (!val) return []
@@ -11,19 +10,18 @@ export const unique = <T>(arr: T[]) => {
   return Array.from(new Set(arr))
 }
 
-export const uniqueBy = <T>(arr: Dictionary<T>[], propName: string) => {
-  // can alse use uniqBy from 'lodash'
+export const uniqueBy = <T>(arr: T[], propName: string) => {
+  // can also use uniqBy from 'lodash'
   const set = new Set([])
-  const newArr = []
 
-  arr.forEach(obj => {
-    const val = obj[propName]
-    if (set.has(val)) return
-    newArr.push(obj)
-    set.add(val)
-  })
-
-  return newArr
+  return arr.reduce((prev, current) => {
+    const val = current[propName]
+    if (!set.has(val)) {
+      prev.push(current)
+      set.add(val)
+    }
+    return prev
+  }, [] as T[])
 }
 
 export const empty = <T>(arr: T[]) => {
@@ -39,27 +37,6 @@ export const removeByIndex = <T>(arr: T[], index: number) => {
   arr.splice(index, 1)
 }
 
-export const removeBy = <T>(
-  arr: Dictionary<T>[],
-  keyVal: KeyVal<T>,
-  all = false
-) => {
-  const key = keyVal.key
-  const val = keyVal.val
-
-  if (all) {
-    const newArr: Dictionary<T>[] = []
-    arr.forEach(item => {
-      if (item[key] === val) return
-      newArr.push(item)
-    })
-    replace(arr, newArr)
-  } else {
-    const index = arr.findIndex(item => item[key] === val)
-    if (index !== -1) {
-      removeByIndex(arr, index)
-    }
-  }
-}
+export const removeBy = lo_remove
 
 export const groupBy = lo_groupBy
