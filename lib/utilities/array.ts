@@ -1,4 +1,4 @@
-import { groupBy as lo_groupBy, remove as lo_remove, uniqBy } from 'lodash'
+import { groupBy as lo_groupBy, remove as lo_remove } from 'lodash'
 import { Iteratee } from './types/common'
 import { isString } from './variable-type'
 
