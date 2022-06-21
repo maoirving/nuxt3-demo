@@ -25,6 +25,13 @@ module.exports = {
     '@typescript-eslint/ban-types': 'off',
     'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'warn',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'warn',
+    'prefer-const': [
+      'error',
+      {
+        destructuring: 'any',
+        ignoreReadBeforeAssign: false,
+      },
+    ],
     'prettier/prettier': [
       'warn',
       {
