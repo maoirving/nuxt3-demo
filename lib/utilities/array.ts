@@ -1,4 +1,6 @@
-import { groupBy as lo_groupBy, remove as lo_remove } from 'lodash'
+import { groupBy as lo_groupBy, remove as lo_remove, uniqBy } from 'lodash'
+import { Iteratee } from './types/common'
+import { isString } from './variable-type'
 
 export const parseToArray = <T>(val: T | T[]) => {
   if (!val) return []
@@ -10,18 +12,18 @@ export const unique = <T>(arr: T[]) => {
   return Array.from(new Set(arr))
 }
 
-export const uniqueBy = <T>(arr: T[], propName: string) => {
+export const uniqueBy = <T>(arr: T[], iteratee: string | Iteratee<T>) => {
   // can also use uniqBy from 'lodash'
-  const set = new Set([])
+  const newArrMap = new Map<any, T>()
 
-  return arr.reduce((prev, current) => {
-    const val = current[propName]
-    if (!set.has(val)) {
-      prev.push(current)
-      set.add(val)
+  arr.forEach(item => {
+    const val = isString(iteratee) ? item[iteratee] : iteratee(item)
+    if (!newArrMap.has(val)) {
+      newArrMap.set(val, item)
     }
-    return prev
-  }, [] as T[])
+  })
+
+  return Array.from(newArrMap.values())
 }
 
 export const empty = <T>(arr: T[]) => {
