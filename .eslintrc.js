@@ -32,6 +32,16 @@ module.exports = {
         ignoreReadBeforeAssign: false,
       },
     ],
+    'vue/html-self-closing': [
+      'warn',
+      {
+        html: {
+          void: 'always',
+          normal: 'never',
+          component: 'always',
+        },
+      },
+    ],
     'prettier/prettier': [
       'warn',
       {
