@@ -37,7 +37,7 @@ module.exports = {
       {
         html: {
           void: 'always',
-          normal: 'never',
+          normal: 'always',
           component: 'always',
         },
       },
