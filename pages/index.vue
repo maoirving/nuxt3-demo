@@ -1,18 +1,12 @@
 <script setup lang="ts">
-import { onClickOutside } from '@vueuse/core'
-
 const { x, y } = useMouse()
 
 const title = ref('Home Page')
-const targetEl = ref(null)
-const ballVisible = ref(false)
+const modalEl = ref(null)
 
-onClickOutside(targetEl, () => {
-  ballVisible.value = false
-})
-
-const onShowBall = () => {
-  ballVisible.value = true
+const onShowModal = () => {
+  if (!modalEl.value) return
+  modalEl.value.showModal()
 }
 </script>
 
@@ -41,9 +35,11 @@ const onShowBall = () => {
       </NuxtLink>
     </div>
     <div>
-      <BaseButton varint="primary" @click="onShowBall"> show ball </BaseButton>
+      <BaseButton varint="primary" @click="onShowModal">
+        show Modal
+      </BaseButton>
     </div>
-    <div v-if="ballVisible" ref="targetEl" class="targer">click outside!</div>
+    <BaseModal ref="modalEl" />
   </div>
 </template>
 
