@@ -4,6 +4,7 @@ import { defineNuxtConfig } from 'nuxt'
 export default defineNuxtConfig({
   ssr: process.env.SSR !== 'false', // default: true
   modules: ['@vueuse/nuxt'],
+  buildModules: ['@pinia/nuxt'],
   plugins: ['@/plugins/directives.ts'],
   css: ['@/assets/sass/app.scss'],
   vite: {
