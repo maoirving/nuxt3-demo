@@ -26,7 +26,7 @@ export const combineObject = (
       case Action.Delete:
         break
       default:
-        newValue = unique(newObjVals.concat(valuesArr))
+        newValue = unique([...newObjVals, ...valuesArr])
     }
 
     if (newValue.length) {
