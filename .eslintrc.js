@@ -32,6 +32,14 @@ module.exports = {
         ignoreReadBeforeAssign: false,
       },
     ],
+    'vue/html-closing-bracket-spacing': [
+      'warn',
+      {
+        startTag: 'never',
+        endTag: 'never',
+        selfClosingTag: 'always',
+      },
+    ],
     'vue/html-self-closing': [
       'warn',
       {
