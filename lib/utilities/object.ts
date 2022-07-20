@@ -13,7 +13,7 @@ export const combineObject = (
     const key = item.key
     let newValue: string[] = []
     const newObjVals = parseToArray(newObj[key])
-    const valuesArr = parseToArray(item.value) as string[]
+    const valuesArr = parseToArray(item.value)
     const valuesArrSet = new Set(valuesArr)
 
     switch (item.action) {

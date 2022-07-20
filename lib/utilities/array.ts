@@ -2,10 +2,9 @@ import { groupBy as lo_groupBy, remove as lo_remove } from 'lodash'
 import { Iteratee } from './types/common'
 import { isString } from './variable-type'
 
-export const parseToArray = <T>(val: T | T[]) => {
-  if (!val) return []
-
-  return Array.isArray(val) ? val : [val]
+export const parseToArray = <T>(val: T | T[]): NonNullable<T>[] => {
+  if (val === undefined || val === null) return []
+  return (Array.isArray(val) ? val : [val]) as NonNullable<T>[]
 }
 
 export const unique = <T>(arr: T[]) => {
