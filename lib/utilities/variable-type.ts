@@ -1,15 +1,16 @@
-export const isNumber = (val: any): val is number => typeof val === 'number'
+export const isNumber = (val: unknown): val is number => typeof val === 'number'
 
-export const isBoolean = (val: any): val is boolean => typeof val === 'boolean'
+export const isBoolean = (val: unknown): val is boolean =>
+  typeof val === 'boolean'
 
-export const isString = (val: any): val is string => typeof val === 'string'
+export const isString = (val: unknown): val is string => typeof val === 'string'
 
 const toString = Object.prototype.toString
 
-export const isObject = (val: any): val is object =>
+export const isObject = (val: unknown): val is Record<string | number, any> =>
   toString.call(val) === '[object Object]'
 
 export const { isArray } = Array
 
-export const isFunction = <T extends Function>(val: any): val is T =>
+export const isFunction = <T extends Function>(val: unknown): val is T =>
   typeof val === 'function'
