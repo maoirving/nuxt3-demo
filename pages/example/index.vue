@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { filterAndMap, getLastInArray } from '~~/examples/array'
 import { numArr } from '~~/examples/array/data'
-import { getCurrentTimeString } from '~~/lib/utilities/datetime'
 
 const title = ref('Example Page')
 const examples = ref([
@@ -18,8 +17,6 @@ const examples = ref([
 ])
 getLastInArray()
 filterAndMap()
-console.log(getCurrentTimeString())
-console.log(new Date().toTimeString())
 </script>
 
 <template>

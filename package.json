@@ -25,5 +25,9 @@
     "sass": "^1.52.1",
     "typescript": "^4.6.4",
     "vue": "^3.2.37"
+  },
+  "dependencies": {
+    "@pinia/nuxt": "^0.1.9",
+    "pinia": "^2.0.14"
   }
 }

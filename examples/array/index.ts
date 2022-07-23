@@ -15,7 +15,7 @@ export const filterAndMap = () => {
     return prev
   }, [] as string[])
 
-  // Method 2. use Array.flatMap()
+  // Method 2. use Array.flatMap() (this method has poor performance, use reduce instead)
   const newArr2 = objArr.flatMap(obj => (obj.visible ? [obj.name] : []))
 
   console.log(newArr)

@@ -1,28 +1,28 @@
-import { Dictionary, KeyVal } from './types/common'
+import { groupBy as lo_groupBy, remove as lo_remove } from 'lodash'
+import { Iteratee } from './types/common'
+import { isString } from './variable-type'
 
-export const parseToArray = <T>(val: T | T[]) => {
-  if (!val) return []
-
-  return Array.isArray(val) ? val : [val]
+export const parseToArray = <T>(val: T | T[]): NonNullable<T>[] => {
+  if (val === undefined || val === null) return []
+  return (Array.isArray(val) ? val : [val]) as NonNullable<T>[]
 }
 
 export const unique = <T>(arr: T[]) => {
   return Array.from(new Set(arr))
 }
 
-export const uniqueBy = <T>(arr: Dictionary<T>[], propName: string) => {
-  // can alse use uniqBy from 'lodash'
-  const set = new Set([])
-  const newArr = []
+export const uniqueBy = <T>(arr: T[], iteratee: string | Iteratee<T>) => {
+  // can also use uniqBy from 'lodash'
+  const newArrMap = new Map<any, T>()
 
-  arr.forEach(obj => {
-    const val = obj[propName]
-    if (set.has(val)) return
-    newArr.push(obj)
-    set.add(val)
+  arr.forEach(item => {
+    const val = isString(iteratee) ? item[iteratee] : iteratee(item)
+    if (!newArrMap.has(val)) {
+      newArrMap.set(val, item)
+    }
   })
 
-  return newArr
+  return Array.from(newArrMap.values())
 }
 
 export const empty = <T>(arr: T[]) => {
@@ -38,25 +38,6 @@ export const removeByIndex = <T>(arr: T[], index: number) => {
   arr.splice(index, 1)
 }
 
-export const removeBy = <T>(
-  arr: Dictionary<T>[],
-  keyVal: KeyVal<T>,
-  all = false
-) => {
-  const key = keyVal.key
-  const val = keyVal.val
+export const removeBy = lo_remove
 
-  if (all) {
-    const newArr: Dictionary<T>[] = []
-    arr.forEach(item => {
-      if (item[key] === val) return
-      newArr.push(item)
-    })
-    replace(arr, newArr)
-  } else {
-    const index = arr.findIndex(item => item[key] === val)
-    if (index !== -1) {
-      removeByIndex(arr, index)
-    }
-  }
-}
+export const groupBy = lo_groupBy

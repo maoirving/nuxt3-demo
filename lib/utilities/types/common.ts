@@ -19,3 +19,5 @@ export interface KeyVal<T> {
   key: string
   val: T
 }
+
+export type Iteratee<T> = (item: T) => unknown

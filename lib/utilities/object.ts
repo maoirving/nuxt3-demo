@@ -1,13 +1,12 @@
-import { clone } from 'ramda'
 import { parseToArray, unique } from './array'
 import { Action, Dictionary, ObjectAction } from './types/common'
-import { findKey as lo_findKey } from 'lodash'
+import { cloneDeep, findKey as lo_findKey } from 'lodash'
 
 export const combineObject = (
   currentObj: Dictionary<string | string[]>,
   objActions: ObjectAction | ObjectAction[]
 ) => {
-  const newObj = clone(currentObj)
+  const newObj = cloneDeep(currentObj)
   const objActionArr = parseToArray(objActions)
 
   objActionArr.forEach(item => {
@@ -27,7 +26,7 @@ export const combineObject = (
       case Action.Delete:
         break
       default:
-        newValue = unique(newObjVals.concat(valuesArr))
+        newValue = unique([...newObjVals, ...valuesArr])
     }
 
     if (newValue.length) {
