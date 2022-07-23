@@ -19,7 +19,7 @@
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-vue": "^9.0.1",
     "lodash": "^4.17.21",
-    "nuxt": "3.0.0-rc.3",
+    "nuxt": "3.0.0-rc.6",
     "prettier": "^2.6.2",
     "ramda": "^0.28.0",
     "sass": "^1.52.1",
