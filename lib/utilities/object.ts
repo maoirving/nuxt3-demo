@@ -1,4 +1,4 @@
-import { parseToArray, unique } from './array'
+import { toArray, unique } from './array'
 import { Action, Dictionary, ObjectAction } from './types/common'
 import { cloneDeep, findKey as lo_findKey } from 'lodash'
 
@@ -7,13 +7,13 @@ export const combineObject = (
   objActions: ObjectAction | ObjectAction[]
 ) => {
   const newObj = cloneDeep(currentObj)
-  const objActionArr = parseToArray(objActions)
+  const objActionArr = toArray(objActions)
 
   objActionArr.forEach(item => {
     const key = item.key
     let newValue: string[] = []
-    const newObjVals = parseToArray(newObj[key])
-    const valuesArr = parseToArray(item.value)
+    const newObjVals = toArray(newObj[key])
+    const valuesArr = toArray(item.value)
     const valuesArrSet = new Set(valuesArr)
 
     switch (item.action) {

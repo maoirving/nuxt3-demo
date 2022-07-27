@@ -5,10 +5,11 @@ export const isBoolean = (val: unknown): val is boolean =>
 
 export const isString = (val: unknown): val is string => typeof val === 'string'
 
-const toString = Object.prototype.toString
+export const toTypeString = (value: unknown): string =>
+  Object.prototype.toString.call(value)
 
-export const isObject = (val: unknown): val is Record<string | number, any> =>
-  toString.call(val) === '[object Object]'
+export const isObject = (val: unknown): val is Record<any, any> =>
+  toTypeString(val) === '[object Object]'
 
 export const { isArray } = Array
 
