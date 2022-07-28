@@ -3,6 +3,7 @@
   "extends": "./.nuxt/tsconfig.json",
   "compilerOptions": {
     "strictNullChecks": true,
+    "strictPropertyInitialization": true,
     "noImplicitAny": false,
     "types": ["@pinia/nuxt"]
   }
