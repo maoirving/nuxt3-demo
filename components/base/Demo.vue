@@ -1,7 +1,7 @@
 <template>
   <div>
     <p>base demo component</p>
-    <p>{{ counter }}</p>
+    <p>{{ count }}</p>
   </div>
 </template>
 
@@ -10,7 +10,7 @@ import { storeToRefs } from 'pinia'
 import { useCounterStore } from '~~/store/counter'
 
 const counterStore = useCounterStore()
-const { counter } = storeToRefs(counterStore)
+const { count } = storeToRefs(counterStore)
 </script>
 
 <style lang="scss" scoped></style>
