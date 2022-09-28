@@ -40,3 +40,14 @@ export const combineObject = (
 }
 
 export const findKey = lo_findKey
+
+export const pick = <T extends Record<string, any>, K extends keyof T>(
+  obj: T,
+  props: K[]
+) => {
+  const newObj: Partial<Pick<T, K>> = {}
+  props.forEach(key => {
+    newObj[key] = obj[key]
+  })
+  return newObj
+}
