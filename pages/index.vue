@@ -1,8 +1,10 @@
 <script setup lang="ts">
+import BaseModal from '~~/components/base/Modal.vue'
+
 const { x, y } = useMouse()
 
 const title = ref('Home Page')
-const modalEl = ref(null)
+const modalEl = ref<InstanceType<typeof BaseModal> | null>(null)
 
 const onShowModal = () => {
   if (!modalEl.value) return
