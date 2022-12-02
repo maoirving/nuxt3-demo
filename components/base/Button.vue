@@ -8,11 +8,11 @@ export default defineComponent({
 <script setup lang="ts">
 const props = withDefaults(
   defineProps<{
-    varint?: string
+    variant?: string
     border?: boolean
   }>(),
   {
-    varint: 'primary',
+    variant: 'primary',
     border: false,
   }
 )
@@ -25,7 +25,7 @@ const buttonType = computed<'button' | 'submit' | 'reset'>(() => 'button')
 
 const color = computed(() => {
   let c = ''
-  switch (props.varint) {
+  switch (props.variant) {
     case 'pink':
       c = 'pink'
       break

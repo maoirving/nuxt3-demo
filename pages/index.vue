@@ -37,7 +37,7 @@ const onShowModal = () => {
       </NuxtLink>
     </div>
     <div>
-      <BaseButton varint="primary" @click="onShowModal">
+      <BaseButton variant="primary" @click="onShowModal">
         show Modal
       </BaseButton>
     </div>
