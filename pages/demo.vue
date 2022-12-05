@@ -4,6 +4,7 @@
     <p>{{ count }}</p>
     <BaseButton @click="increment">add</BaseButton>
     <BaseDemo />
+    <BaseButton @click="onClick">click me</BaseButton>
   </div>
 </template>
 
@@ -14,6 +15,10 @@ import { useCounterStore } from '~~/store/counter'
 const counterStore = useCounterStore()
 const { count } = storeToRefs(counterStore)
 const { increment } = counterStore
+const title = ref('hello')
+const onClick = () => {
+  // do something
+}
 </script>
 
 <style lang="scss" scoped></style>
