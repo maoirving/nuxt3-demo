@@ -41,7 +41,7 @@ const onClick = () => {
 </script>
 
 <template>
-  <button class="btn" :type="buttonType" v-bind="$attrs" @click="onClick">
+  <button class="btn" :type="buttonType" @click="onClick">
     <slot />
   </button>
 </template>
