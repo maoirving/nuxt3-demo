@@ -21,7 +21,7 @@ filterAndMap()
 
 <template>
   <div>
-    <h1>{{ title }}</h1>
+    <h1 class="primary-title">{{ title }}</h1>
     <div>this is example page</div>
     <div>
       <NuxtLink :to="{ name: 'index' }"> back Home </NuxtLink>

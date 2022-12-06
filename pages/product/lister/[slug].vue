@@ -4,7 +4,7 @@ const title = ref('PLP')
 
 <template>
   <div>
-    <h1>{{ title }}</h1>
+    <h1 class="primary-title">{{ title }}</h1>
     <div>
       <NuxtLink
         :to="{ name: 'product-detail-slug', params: { slug: 'iPhone13' } }"

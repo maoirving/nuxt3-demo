@@ -4,6 +4,6 @@ const title = ref('PDP')
 
 <template>
   <div>
-    <h1>{{ title }}</h1>
+    <h1 class="primary-title">{{ title }}</h1>
   </div>
 </template>

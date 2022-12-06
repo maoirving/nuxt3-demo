@@ -14,7 +14,7 @@ const onShowModal = () => {
 
 <template>
   <div>
-    <h1>{{ title }}</h1>
+    <h1 class="primary-title">{{ title }}</h1>
     <p>mouse: ({{ x }}, {{ y }})</p>
     <div>
       <NuxtLink :to="{ name: 'demo' }"> to Demo </NuxtLink>

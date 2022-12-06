@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Demo Page</h1>
+    <h1 class="primary-title">Demo Page</h1>
     <p>{{ count }}</p>
     <BaseButton @click="increment">add</BaseButton>
     <BaseDemo />
