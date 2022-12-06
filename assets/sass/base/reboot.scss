@@ -1,0 +1,6 @@
+a {
+  @apply underline;
+  &:hover {
+    @apply text-pink-500;
+  }
+}
