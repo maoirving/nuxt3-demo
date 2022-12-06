@@ -30,7 +30,7 @@ const color = computed(() => {
       c = 'pink'
       break
     default:
-      c = '#000'
+      c = '#fff'
   }
   return c
 })
@@ -41,7 +41,11 @@ const onClick = () => {
 </script>
 
 <template>
-  <button class="btn" :type="buttonType" @click="onClick">
+  <button
+    class="hover:filter hover:brightness-95 px-1.5 py-0.5 bg-green-500 rounded btn"
+    :type="buttonType"
+    @click="onClick"
+  >
     <slot />
   </button>
 </template>
