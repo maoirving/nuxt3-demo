@@ -1,5 +1,3 @@
-import { defineStore } from 'pinia'
-
 export const useDemoStore = defineStore('demo', () => {
   const firstName = ref('Small')
   const lastName = ref('Demo')
